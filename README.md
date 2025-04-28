@@ -1,4 +1,4 @@
-# 多重 Zeta 值与 L-函数相关领域研讨会  
+# 多重 Zeta 与 L-函数相关领域研讨会  
 # Workshop on Multiple Zeta Values and Related Fields
 
 本仓库包含了多重 Zeta 值与相关领域研讨会 2025 的主页。该主页基于 Mike Pierce 的 [conference-website-template](https://mikepierce.github.io/conference-website-template/) 项目进行修改。

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href="..">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
+    <meta name="description" content="Conference Template">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="KeyWords" content="Conference">
+    <title>地点</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高德地图导航</title>
+    <style>
+        #mapContainer {
+            width: 900px; /* 调整地图宽度 */
+            height: 650px; /* 调整地图高度 */
+            border: 1px solid #ccc; /* 地图容器边框样式 */
+            margin: 0 auto; /* 水平居中 */
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="banner">
+        <img src="assets/banner1.png" alt="Conference Template Banner">
+        <div class="top-left">
+            <span class="title1" style="font-size: 28px;">第四届多重zeta值及相关领域国际研讨会 </span>
+             
+            <br>
+            <span class="title2" style="font-size: 25px;">The 4th International Workshop on Multiple Zeta Values and Related Topics </span>
+           </div>
+
+    
+
+        <div class="bottom-right">
+            <span  style="font-size: 20px;">2025年  7月12日-16日 </span>
+
+             <br>
+            <span  style="font-size: 20px;">    12 July-16 July, 2025 </span>
+ 
+            
+        </div>
+    </div>
+
+    <table class="navigation">
+        <tr>
+            <td class="navigation">
+                <a   title="Conference Home Page" href=".">主页<br>homepage</a>
+            </td>
+            <td class="navigation">
+                <a title="Register for the Conference" href="registration">注册<br>registration </a>
+            </td>
+            <td class="navigation">
+                <a title="Conference Program" href="program">程序<br>programe</a> 
+            </td>
+            <td class="navigation">
+                <a  class="current" title="Directions to the Conference" href="directions">地点<br>location</a>
+            </td>
+            <td class="navigation">
+                <a title="Conference Flyer" href="flyer">媒体<br>media</a>
+            </td>
+        </tr>
+    </table>
+
+
+    <h2>会议地点/Conference Location    </h2>
+    <p>同济大学（上海市杨浦区四平路1239号）<br>
+        Tongji University (No. 1239, Siping Road, Yangpu District, Shanghai)
+    </p>
+    <p>注册地点：上海同济君禧大酒店（上海市杨浦区彰武路50号）
+        <br>Shanghai Tongji Junxi Hotel (No. 50, Zhangwu Road, Yangpu District, Shanghai)
+    </p>
+
+    <h2> 相关说明/Important Notes</h2>
+    <p>本次研讨会不收取注册费，会务组将为参会人员提供免费餐饮，参会人员的住宿由会务组统一安排，住宿费用、交通费等费用均自理。<br>
+        here is no registration fee for this conference. The organizing committee will provide complimentary meals for all participants. Accommodation will be arranged by the committee, but all lodging expenses, transportation costs, and other incidental fees shall be borne by the attendees themselves.</p>
+
+   
+    <h2>交通信息/Transportation Information</h2>  
+    <p>交通信息：地铁10号线同济大学站1/2/5号口均可到达同济大学东门（正门）。上海同济珺禧大酒店距离同济大学东门150米左右。
+       <br> By Metro: Take Line 10 to Tongji University Station (Exits 1/2/5) for the East Gate (Main Entrance). Shanghai Tongji Junxi Hotel is about 150m from the gate.
+
+    </p>
+ 
+
+ 
+<h4>高德地图导航</h4>
+
+<div id="mapContainer" style="width:100%; height:400px;"></div>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key="></script>
+<script>
+    // 初始化地图
+    var map = new AMap.Map('mapContainer', {
+        center: [121.51, 31.28], // 同济君禧大酒店坐标
+        zoom: 16 // 地图缩放级别
+    });
+
+    // 加载地图工具栏
+    AMap.plugin('AMap.ToolBar', function(){
+        var toolbar = new AMap.ToolBar();
+        map.addControl(toolbar);
+    });
+
+    // 添加标记点
+    var marker = new AMap.Marker({
+        position: [121.51, 31.28],
+        title: '上海同济君禧大酒店'
+    });
+    map.add(marker);
+
+    // 点击标记点事件
+    marker.on('click', function(e){
+        marker.markOnAMAP({
+            name: '上海同济君禧大酒店',
+            position: marker.getPosition()
+        });
+    });
+
+    // 添加文字标注
+    var text = new AMap.Text({
+        text: "上海同济君禧大酒店",
+        position: [121.51, 31.28],
+        offset: new AMap.Pixel(0, -30), // 文字向上偏移
+        style: {
+            'background-color': 'rgba(255,255,255,0.7)',
+            'border': '1px solid #52739e', // 使用您主题的蓝色
+            'padding': '5px 10px',
+            'font-size': '14px',
+            'color': '#813c54', // 使用您主题的酒红色
+            'border-radius': '3px'
+        }
+    });
+    map.add(text);
+</script>
+
+
+
+
+<h4>Google Map</h4>
+<iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.813211860863!2d121.50558207651393!3d31.28126155891482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b27162dd7e4d71%3A0xe40f93864ba4a4a1!2z5ZCM5r-f5ZCb56an5aSn6YWS5bqX!5e0!3m2!1szh-TW!2sjp!4v1745816508798!5m2!1szh-TW!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</body>
+</html>
